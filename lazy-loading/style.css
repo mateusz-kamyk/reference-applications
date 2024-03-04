@@ -1,0 +1,87 @@
+html {
+    background-color: #11323B;
+    overflow: hidden;
+}
+
+img {
+    width: 300px;
+    height: 210px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+  .highlighton img{
+    border: 4px solid #ffffff;
+    display: block;
+}
+
+.media-scroller {
+    display: grid;
+    gap: var(--size-3);
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.container {
+    position: fixed;
+    overflow: hidden;
+    top: 560px;
+    left: 290px;
+    right: 0;
+    bottom: 0;
+    background-color: #11323B;
+    padding-left: 10px;
+    padding-bottom: 40px;
+}
+
+.media-element {
+    width: 300px;
+    height: 210px;
+    background: #11323B;
+    z-index: 5;
+    padding-left: 5px;
+    padding-bottom: 70px;
+    padding-right: 20px;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 101;
+    top: 65px;
+    width: 280px;
+    height: 1016px;
+    left: 0px;
+    background-color: #ee2737;
+    color: #ffff;
+    text-align: left;
+    text-overflow: clip;
+}
+
+#Appname {
+    position: absolute;
+    top: 0px;
+    color: white;
+    z-index: 100;
+    text-align: center;
+}
+
+.title {
+    color: #fff;
+}
+
+#header {
+    position: absolute;
+    color: #fff;
+    top: 465px;
+    left: 310px;
+}
+
+#big {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 700px;
+    height: 500px;
+}
