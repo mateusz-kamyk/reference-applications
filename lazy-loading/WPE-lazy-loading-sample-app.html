@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title ></title>
+
+  <link rel="preconnect" href="https://storage.googleapis.com/">
+
+  <style type="text/css">
+
+    html {
+      background-color: #11323B;
+      overflow: hidden;
+    }
+
+    img {
+      width: 300px;
+      height: 210px;
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
+
+    .highlighton img{
+      border: 4px solid #ffffff;
+      display: block;
+    }
+
+    .media-scroller {
+      display: grid;
+      gap: var(--size-3);
+      grid-auto-flow: column;
+      grid-auto-columns: auto;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .container {
+      position: fixed;
+      overflow: hidden;
+      top: 560px;
+      left: 290px;
+      right: 0;
+      bottom: 0;
+      background-color: #11323B;
+      padding-left: 10px;
+      padding-bottom: 40px;
+    }
+
+    .media-element {
+      width: 300px;
+      height: 210px;
+      background: #11323B;
+      z-index: 5;
+      padding-left: 5px;
+      padding-bottom: 70px;
+      padding-right: 20px;
+    }
+
+    .tooltip {
+      position: absolute;
+      z-index: 101;
+      top: 65px;
+      width: 280px;
+      height: 1016px;
+      left: 0px;
+      background-color: #ee2737;
+      color: #ffff;
+      text-align: left;
+      text-overflow: clip;
+    }
+
+    #Appname {
+      position: absolute;
+      top: 0px;
+      color: white;
+      z-index: 100;
+      text-align: center;
+    }
+
+    .title {
+      color: #fff;
+    }
+
+    #header {
+      position: absolute;
+      color: #fff;
+      top: 465px;
+      left: 310px;
+    }
+
+    #big {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 700px;
+      height: 500px;
+    }
+    
+  </style>
+  <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous">
+  </script>
+   
+</head>
+<body>
+
+  <div id="Appname">
+    <h1>Sample VOD App</h1>
+  </div>
+
+  <div id="info">
+    <textarea cols="60" rows="30" id="img1-tooltip" class="tooltip">Tool Tip 1</textarea>
+  </div>
+
+  <div class="headerImage" style="z-index: 9999;">
+    <img id="big" class="poster">
+  </div>
+  <span>
+    <h1 id="header">Sample Images</h1>
+    <div class="container">
+        <div class="media-scroller"  id="scroller">
+            <div id="row" class="media-element">
+              <img  alt="img" src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img  alt="img" src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img  alt="img" src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img  alt="img" src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img  alt="img" src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"  alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"  alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"  alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"  alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"  alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/shaka.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"  alt="img"  data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller2">
+            <div id="row" class="media-element">
+              <img     alt="img" src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img     alt="img" src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img     alt="img" src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img     alt="img" src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+              <img    alt="img" src="https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.webp" />
+              <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"  data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img"  data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img"  data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img"  data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img"  data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img"  data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img"  data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller3">
+            <div id="row" class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+              <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/bayerischer_rundfunk.webp" />
+              <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller4">
+            <div id="row" class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller1">
+            <div id="row" class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/shaka.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller2">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.webp" />
+                <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller3">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/bayerischer_rundfunk.webp" />
+                <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller4">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller4">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller1">
+            <div id="row" class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div id="row" class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/shaka.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller2">
+            <div id="row" class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.webp" />
+              <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller3">
+            <div id="row" class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+              <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/bayerischer_rundfunk.webp" />
+              <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller4">
+            <div id="row" class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+              <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+              <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+              <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+              <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller1">
+            <div id="row" class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/shaka.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller2">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.webp" />
+                <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" onload="l(96)"/>
+                <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/glass_half.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller3">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 11</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"    alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/bayerischer_rundfunk.webp" />
+                <p class="title">Image 12</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/audio_only.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/azure.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller4">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" onload="l(97)"/>
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" onload="l(98)"/>
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+        <div class="media-scroller"  id="scroller4">
+            <div id="row" class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" onload="l(99)"/>
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 8</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 10</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"     alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 9</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/heliocentricism.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/sintel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/axinom_test.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/weird_rainbow_test_pattern.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp" onload="l(100)" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/art_of_motion.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.webp" />
+                <p class="title">Image 7</p>
+            </div>
+            <div class="media-element">
+                <img class="lazy-load"   alt="img" data-src="https://storage.googleapis.com/shaka-asset-icons/angel_one.webp" />
+                <p class="title">Image 7</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </span>
+  <script type="text/javascript">
+
+    function l(num) {
+      document.getElementById('img1-tooltip').innerText += "loaded #" + num + " image\n";
+    }
+    
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const mediaScrollers = document.querySelectorAll('.media-scroller');
+        let currentScrollerIndex = 0;
+        let currentImageIndex = 0;
+        const initialHighlighton = mediaScrollers[0].children[0];
+        initialHighlighton.classList.add('highlighton');
+        const bigPoster = document.getElementById('big');
+        const textarea = document.getElementById('img1-tooltip');
+
+        function loadImagesInRange(start, end, scrollerIndex) {
+            const imagesInScroller = mediaScrollers[scrollerIndex].children;
+            for (let i = start; i <= end; i++) {
+                if (i >= 0 && i < imagesInScroller.length) {
+                    const image = imagesInScroller[i].querySelector('img');
+                    const dataSrc = image.getAttribute('data-src');
+                    if (dataSrc) {
+                        image.setAttribute('src', dataSrc);
+                        image.removeAttribute('data-src');
+                    }
+                }
+            }
+        }
+
+        function lazyLoadImagesInRange() {
+            const imageRange = 4; // Zakres ładowania (1 obraz w każdą stronę)
+
+            const startImage = currentImageIndex - imageRange;
+            const endImage = currentImageIndex + imageRange;
+
+            loadImagesInRange(startImage, endImage, currentScrollerIndex);
+            loadImagesInRange(startImage, imageRange, currentScrollerIndex+1);
+        }
+
+        function measureLoadTime() {
+            const startTime = performance.now();
+            bigPoster.addEventListener('load', function onLoad() {
+                const endTime = performance.now();
+                const loadTime = endTime - startTime;
+            
+                textarea.innerHTML = `Big poster loading time: ${loadTime.toFixed(1)} ms`;
+
+                bigPoster.removeEventListener('load', onLoad);
+            });
+        }
+
+        // Function to scroll to the currently highlighted element
+        function scrollToHighlight() {
+            const highlighton = document.querySelector('.highlighton');
+            if (highlighton) {
+                setTimeout(() => {
+                    highlighton.scrollIntoView({behavior: 'smooth'});
+                },0);    
+            }
+        }
+
+        // Function to update the big poster with the highlighted image
+        function updateBigPoster(src) {
+            bigPoster.src = src;
+        }
+
+        // Update big poster on arrow key press
+        function updateBigPosterOnArrowKeyPress() {
+            const newHighlighton = mediaScrollers[currentScrollerIndex].children[currentImageIndex];
+            const newImageSrc = newHighlighton.querySelector('img').src;
+            updateBigPoster(newImageSrc);
+            const startTime = performance.now();
+        }
+
+        updateBigPosterOnArrowKeyPress();
+
+        document.addEventListener('keydown', function (event) {
+            const key = event.keyCode;
+        
+            if (key === 37) { // Arrow Left
+                currentImageIndex = Math.max(currentImageIndex - 1, 0);
+            } else if (key === 39) { // Arrow Right
+                currentImageIndex = Math.min(currentImageIndex + 1, mediaScrollers[currentScrollerIndex].children.length - 1);
+            } else if (key === 38) { // Arrow Up
+                if (currentScrollerIndex > 0) {
+                    currentScrollerIndex -= 1;
+                    currentImageIndex = 0;
+                }
+            } else if (key === 40) { // Arrow Down
+                if (currentScrollerIndex < mediaScrollers.length - 1) {
+                    currentScrollerIndex += 1;
+                    currentImageIndex = 0;
+                }
+            } else if (key === 8) { //back to 1st icon
+                currentImageIndex = 0;
+                currentScrollerIndex = 0;
+            }
+
+            // Remove highlighton from all images
+            mediaScrollers.forEach((scroller) => {
+                scroller.querySelectorAll('.highlighton').forEach((element) => {
+                    element.classList.remove('highlighton');
+
+                });
+            });
+            
+            // Add highlighton to the current image
+            const newHighlighton = mediaScrollers[currentScrollerIndex].children[currentImageIndex];
+            newHighlighton.classList.add('highlighton');
+
+
+            scrollToHighlight();
+            measureLoadTime();
+            updateBigPosterOnArrowKeyPress();
+            lazyLoadImagesInRange();
+        });
+    });
+
+
+  </script>
+
+</body>
+
+    
+</html>
